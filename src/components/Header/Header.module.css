@@ -1,0 +1,21 @@
+.heder {
+  background-color: #81cbad;
+  border-radius: 8px;
+  padding-top: 20px;
+  padding-top: 20px;
+}
+.nav_menu {
+  display: flex;
+  gap: 60px;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+.nav_item {
+  font-weight: 600;
+  font-size: 24px;
+  color: #1b1d1c;
+}
+
+.nav_item:hover {
+  color: rgb(227, 131, 131);
+}
