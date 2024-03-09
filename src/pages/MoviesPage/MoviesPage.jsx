@@ -39,7 +39,7 @@ const MoviesPage = () => {
     <div>
       <SearchForm />
       {isLoading && <Loader />}
-      {searchMovies && <MoviesList movies={searchMovies} />}
+      {searchMovies.length > 0 && <MoviesList movies={searchMovies} />}
     </div>
   );
 };

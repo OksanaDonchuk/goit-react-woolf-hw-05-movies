@@ -20,8 +20,6 @@ const MoviesList = ({ movies }) => {
               width={'270px'}
               height={'400px'}
             />
-          </Link>
-          <Link to={`/movies/${id}`} state={{ from: location }}>
             <p className={css.trendMovies_title}>{title ? title : name}</p>
           </Link>
         </li>

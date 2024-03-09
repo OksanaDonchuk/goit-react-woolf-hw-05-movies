@@ -14,10 +14,6 @@ const Reviews = () => {
       try {
         setIsLoading(true);
         const data = await getMoviesReviews(movieId);
-        if (data.data.results.length === 0) {
-          alert('Sorry, there is no information');
-          return;
-        }
         setReviews(data.data.results);
       } catch (error) {
         alert('Oops, something went wrong');
@@ -32,14 +28,18 @@ const Reviews = () => {
     <div>
       {isLoading && <Loader />}
       <ul className={css.reviews_list}>
-        {reviews.map(({ author, content }) => (
-          <li className={css.reviews_item} key={author}>
-            <div className={css.reviews_container}>
-              <p className={css.rev_author}>{author}</p>
-              <p className={css.rev_content}>{content}</p>
-            </div>
-          </li>
-        ))}
+        {reviews.length > 0 ? (
+          reviews.map(({ author, content }) => (
+            <li className={css.reviews_item} key={author}>
+              <div className={css.reviews_container}>
+                <p className={css.rev_author}>{author}</p>
+                <p className={css.rev_content}>{content}</p>
+              </div>
+            </li>
+          ))
+        ) : (
+          <p>Sorry, there is no information</p>
+        )}
       </ul>
     </div>
   );
