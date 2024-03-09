@@ -6,7 +6,7 @@ const MoviesList = ({ movies }) => {
 
   return (
     <ul className={css.trend_list}>
-      {movies.map(({ id, title, poster_path }) => (
+      {movies.map(({ id, title, name, poster_path }) => (
         <li className={css.trend_item} key={id}>
           <Link to={`/movies/${id}`} state={{ from: location }}>
             <img
@@ -22,7 +22,7 @@ const MoviesList = ({ movies }) => {
             />
           </Link>
           <Link to={`/movies/${id}`} state={{ from: location }}>
-            <p className={css.trendMovies_title}>{title}</p>
+            <p className={css.trendMovies_title}>{title ? title : name}</p>
           </Link>
         </li>
       ))}

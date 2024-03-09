@@ -1,0 +1,34 @@
+.cast_list {
+  margin-top: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.cast_item {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 8px;
+  width: 200px;
+  height: 300px;
+  align-items: center;
+  background-color: #d9e4df;
+  border-radius: 4px;
+}
+
+.cast_descript {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cast_name {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.cast_character {
+  font-size: 16px;
+}

@@ -1,0 +1,43 @@
+.wrapper_details {
+  padding: 0 30px;
+}
+.movie_details {
+  display: flex;
+  gap: 36px;
+  margin-bottom: 16px;
+}
+
+.title {
+  padding-top: 20px;
+  font-size: 45px;
+  margin-bottom: 16px;
+}
+
+.information {
+  width: 60%;
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.genres {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  justify-content: center;
+}
+
+.additional_link {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+}
+
+.additional_item {
+  text-decoration: underline;
+}
+
+.additional_item:hover {
+  color: #81cbad;
+}

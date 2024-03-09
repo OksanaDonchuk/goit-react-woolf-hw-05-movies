@@ -9,6 +9,7 @@
 .trend_item {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: 12px;
   width: 270px;
   border-radius: 2px;

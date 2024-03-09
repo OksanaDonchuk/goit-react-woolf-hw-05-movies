@@ -1,0 +1,25 @@
+.reviews_list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 24px;
+}
+.reviews_item {
+  padding: 12px;
+  border-radius: 4px;
+  background-color: #d9e4df;
+}
+.reviews_container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+.rev_author {
+  font-weight: 600;
+  font-size: 18px;
+  font-style: italic;
+}
+.rev_content {
+  text-align: start;
+}

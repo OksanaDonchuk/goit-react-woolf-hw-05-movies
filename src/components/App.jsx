@@ -1,9 +1,15 @@
 import SharedLauout from 'layouts/SharedLayout';
-import HomePage from 'pages/HomePage/HomePage';
-import MoviesPage from 'pages/MoviesPage/MoviesPage';
-import NotFoundPage from 'pages/NotFoundPage/NotFoundPage';
-import { Suspense } from 'react';
+import { Suspense, lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
+
+const HomePage = lazy(() => import('pages/HomePage/HomePage'));
+const MoviesDetailsPage = lazy(() =>
+  import('pages/MoviesDetailsPage/MoviesDetailsPage')
+);
+const MoviesPage = lazy(() => import('pages/MoviesPage/MoviesPage'));
+const NotFoundPage = lazy(() => import('pages/NotFoundPage/NotFoundPage'));
+const Cast = lazy(() => import('./Cast/Cast'));
+const Reviews = lazy(() => import('./Reviews/Reviews'));
 
 const App = () => {
   return (
@@ -32,10 +38,31 @@ const App = () => {
             </Suspense>
           }
         />
-        {/* <Route path="movies/movieId" element={Suspense fallback={<h3>loading...</h3>}<MoviesDetailsPage /></Suspense>}>
-          <Route path="cast" element={Suspense fallback={<h3>loading...</h3>}<Cast /></Suspense>} />
-          <Route path="reviews" element={Suspense fallback={<h3>loading...</h3>}<Reviews /></Suspense>} /> */}
-        {/* </Route> */} */
+        <Route
+          path="movies/:movieId"
+          element={
+            <Suspense fallback={<h3>loading...</h3>}>
+              <MoviesDetailsPage />
+            </Suspense>
+          }
+        >
+          <Route
+            path="cast"
+            element={
+              <Suspense fallback={<h3>loading...</h3>}>
+                <Cast />
+              </Suspense>
+            }
+          />
+          <Route
+            path="reviews"
+            element={
+              <Suspense fallback={<h3>loading...</h3>}>
+                <Reviews />
+              </Suspense>
+            }
+          />
+        </Route>
       </Route>
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
